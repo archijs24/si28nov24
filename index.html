@@ -1,0 +1,108 @@
+<html>
+	<head>
+	<title>Simple Interest Calculator</title>
+	    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center; /* Center align all text */
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        /* Form styling */
+        form {
+            background-color: white;
+            padding: 20px;
+            width: 300px;  /* Fixed width for form */
+            margin: 20px auto; /* Center the form horizontally */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-align: center; /* Align labels to the left */
+        }
+
+        input[type="text"], select {
+            width: 100%; /* Make the input field take full width */
+            padding: 8px;
+            font-size: 14px;
+            margin-bottom: 15px; /* Space between fields */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+   
+
+        /* Submit button styling */
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%; /* Make the button take full width */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+	</head>
+	<body>
+	<center>
+		<h1>Simple Interest Calculator</h1>
+		<form onsubmit="calculate()">
+		<label>Principal Amount($):</label>
+		<input type="number"  id="amt" name="amt" placeholder="enter initial investment">
+		<br/><br/>
+		<label>Annual Interest Rate(%):</label>
+		<input type="number"  id="rate" name="rate" placeholder="enter annual interest rate">
+		<br/><br/>
+		<label>Number of Years:</label>
+		<input type="number"  id="year" name="year" placeholder="enter number of years">
+		<br/><br/>
+		<input type="submit" value="Calculate">
+		</form>
+		<h4 id="msg"></h4>
+		<script>
+			function calculate()
+			{
+				event.preventDefault();
+				let amt=document.getElementById("amt");
+				let rate=document.getElementById("rate");
+				let year=document.getElementById("year");
+				let msg=document.getElementById("msg");
+
+
+				let a=parseFloat(amt.value);
+				let r=parseFloat(rate.value)/100;
+				let y=parseFloat(year.value);
+				
+				let si=a*r*y;
+		
+
+				
+				let bal=a+si;
+				
+
+				msg.innerHTML="After  " +y +"   your investment will be worth $   "+bal+"  with simple interest";
+
+
+			}
+		</script>
+	</center>
+	</body>
+</html>
