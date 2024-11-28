@@ -90,11 +90,30 @@
 				let a=parseFloat(amt.value);
 				let r=parseFloat(rate.value)/100;
 				let y=parseFloat(year.value);
-				
+
+				if(a==="")
+				{
+					alert("please enter amount");
+					msg.innerHTML="";
+					amt.focus();
+					return;
+				}
+				if(r==="")
+				{
+					alert("please enter rate");
+					msg.innerHTML="";
+					rate.focus();
+					return;
+				}
+				if(y==="")
+				{
+					alert("please enter year");
+					msg.innerHTML="";
+					year.focus();
+					return;
+				}
 				let si=a*r*y;
 		
-
-				
 				let bal=a+si;
 				
 
